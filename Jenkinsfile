@@ -17,7 +17,7 @@ pipeline {
       }
      stage( 'Deploy' ) {
         steps {
-           sh 'cp ./test.txt /home/alex/ '
+           sh 'cp ./test.txt /tmp '
         }
     }
  }
