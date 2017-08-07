@@ -4,18 +4,18 @@ pipeline {
    stages { 
       stage('Build') {
 	 steps { 
-            sh 'touch "1.txt"'
-            echo 'Hi world' > 1.txt
+            sh 'touch test.txt'
+            echo 'Hi world > test.txt'
          }
       }
       stage('Test') {
          steps {
-            sh 'cat 1.txt'
+            sh 'cat test.txt'
          }
       }
      stage( 'Deploy' ) {
         steps {
-           sh 'cp ./1.txt /home/alex/ '
+           sh 'cp ./test.txt /home/alex/ '
         }
     }
  }
