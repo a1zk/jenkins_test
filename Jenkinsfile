@@ -4,7 +4,7 @@ pipeline {
    stages { 
       stage('Build') {
 	 steps { 
-            sh 'touch 1.txt'
+            sh 'touch "1.txt"'
             echo 'Hi world' > 1.txt
          }
       }
