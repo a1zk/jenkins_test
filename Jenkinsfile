@@ -5,7 +5,7 @@ pipeline {
       stage('Build') {
 	 steps { 
             sh 'touch test.txt'
-            echo 'Hi world' > test.txt
+            echo 'Hi world |tee test.txt'
          }
       }
       stage('Test') {
