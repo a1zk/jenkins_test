@@ -3,10 +3,12 @@ pipeline {
 
    stages { 
       stage('Build') {
+      properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')
 	 steps { 
             sh '''
             touch test.txt
             echo Hi world |tee test.txt
+	    mkdir -p /tmp/test
             '''
          }
       }
@@ -17,7 +19,7 @@ pipeline {
       }
      stage( 'Deploy' ) {
         steps {
-           sh 'cp ./test.txt /tmp '
+           sh 'cp ./test.txt /tmp/test '
         }
     }
  }
