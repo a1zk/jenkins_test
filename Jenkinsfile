@@ -3,7 +3,6 @@ pipeline {
 
    stages { 
       stage('Build') {
-         properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')
 	 steps { 
             sh '''
             touch test.txt
