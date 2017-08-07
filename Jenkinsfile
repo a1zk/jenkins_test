@@ -18,7 +18,7 @@ pipeline {
       }
      stage( 'Deploy' ) {
         steps {
-           sh 'cp ./test.txt /tmp/test '
+           sh 'ansible-playbook /etc/ansible/deploy_test.yml -i /etc/ansible/hosts -u jenkins -s '
         }
     }
  }
