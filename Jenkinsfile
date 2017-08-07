@@ -4,8 +4,10 @@ pipeline {
    stages { 
       stage('Build') {
 	 steps { 
-            sh 'touch test.txt'
-            echo 'Hi world |tee test.txt'
+            sh '''
+            touch test.txt
+            echo Hi world |tee test.txt
+            '''
          }
       }
       stage('Test') {
