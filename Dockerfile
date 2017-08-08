@@ -11,4 +11,3 @@ ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 8081
 
-CMD ["httpd-foreground"]
