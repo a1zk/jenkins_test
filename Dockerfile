@@ -11,4 +11,4 @@ ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 8081
 
-RUN service apache2 start
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
