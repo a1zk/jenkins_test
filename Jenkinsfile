@@ -10,7 +10,7 @@ pipeline {
       stage('Build') {
 	 steps { 
             sh '''
-            docker build $(pwd)/Dockerfile -t apache:alex .
+            docker build -f $(pwd)/Dockerfile -t apache:alex .
             '''
          }
       }
