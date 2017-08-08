@@ -19,6 +19,7 @@ pipeline {
            sh '''
            docker push localhost:5000/apache:alex
            ansible-playbook /etc/ansible/deploy_test.yml -i /etc/ansible/hosts -u jenkins -s
+           '''
         }
     }
  }
