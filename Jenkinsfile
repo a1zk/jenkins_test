@@ -5,20 +5,20 @@ pipeline {
       stage('Build') {
 	 steps { 
             sh '''
-            touch test.txt
-            echo Hi world |tee test.txt
-	    mkdir -p /tmp/test
+            docker build ./Dockerfile -t apache:alex
             '''
          }
       }
       stage('Test') {
          steps {
-            sh 'cat test.txt'
+            sh 'docker ps '
          }
       }
      stage( 'Deploy' ) {
         steps {
-           sh 'ansible-playbook /etc/ansible/deploy_test.yml -i /etc/ansible/hosts -u jenkins -s '
+           sh '''
+           docker push localhost:5000/apache:alex
+           ansible-playbook /etc/ansible/deploy_test.yml -i /etc/ansible/hosts -u jenkins -s
         }
     }
  }
