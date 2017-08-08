@@ -9,8 +9,8 @@ pipeline {
       }
       stage('Build') {
 	 steps { 
-            def workdir = pwd ()
             sh '''
+            def workdir = pwd ()
             docker build $workdir/Dockerfile -t apache:alex
             '''
          }
