@@ -10,7 +10,7 @@ pipeline {
       stage('Build') {
 	 steps { 
             sh '''
-            docker build ./Dockerfile -t apache:alex
+            docker build Dockerfile -t apache:alex
             '''
          }
       }
